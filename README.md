@@ -6,3 +6,5 @@ Team members:
 Huayue (Luke) L.: luhuayue  
 Manish J.: manishpj  
 Victor C.: cuspi  
+
+version 2.0

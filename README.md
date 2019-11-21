@@ -2,7 +2,7 @@
 Milestone 1
 
 
-Team members
-Huayue (Luke) L.: luhuayue
-Manish J.: manishpj 
-Victor C.: cuspi
+Team members:  
+Huayue (Luke) L.: luhuayue  
+Manish J.: manishpj  
+Victor C.: cuspi  

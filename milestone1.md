@@ -161,7 +161,7 @@ Example description
 
 The example sketch shows the visual design of the app and one interactive feature (a tooltip).
 
-![dashBoard](AppSketch.png "App Sketch")
+![dashBoard](img/AppSketch.png "App Sketch")
 
 *A further note on the app sketches:* 
 

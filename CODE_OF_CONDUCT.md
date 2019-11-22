@@ -1,5 +1,8 @@
 # Contributor Covenant Code of Conduct
 
+## Introduction
+For our 532 - Visualization II project, we are commited to creating a friendly and respectful environment to share our ideas and work in the depevolpment of an interactive app. 
+  
 ## Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as

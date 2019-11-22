@@ -15,5 +15,5 @@ Victor C.: [vcuspinera](https://github.com/vcuspinera)
 
 ### The App's Sketch
 
-![first_sketch](sketch_v1.jpg "Jobs' App Sketch")
+![first_sketch](img/sketch_v1.jpg "Jobs App Sketch")
 

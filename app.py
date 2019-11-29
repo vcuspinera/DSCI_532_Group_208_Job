@@ -216,8 +216,8 @@ content = dbc.Container([
                         dcc.Dropdown(
                             id='dd-chart-y',
                             options=[
-                                {'label': 'Standard Deviation', 'value': 'std'},
-                                {'label': 'Percentage in 2000', 'value': 'together_y'}
+                                {'label': 'Stable jobs', 'value': 'std'},
+                                {'label': 'Popular jobs in 2000', 'value': 'together_y'}
                                 # {'label': '2000', 'value': '2000'},
                                 # {'label': 'Horsepower', 'value': 'Horsepower'}
                             ],
@@ -225,20 +225,20 @@ content = dbc.Container([
                             value='std',
                             # style=dict(width='45%',
                             #         verticalAlign="middle")
-                            ), width=2,
+                            ), width=4,
                             ),
-                    dbc.Col(        
-                        dcc.Dropdown(
-                        id='dd-chart-x',
-                        options=[
-                            {'label': 'Job', 'value': 'job'}#,
-                            # {'label': 'Cylinders', 'value': 'Cylinders'},
-                            # {'label': 'Displacement', 'value': 'Displacement'},
-                            # {'label': 'Horsepower', 'value': 'Horsepower'}
-                        ],
-                        clearable=False,
-                        value='job'
-                        ), width=2),
+#                     dbc.Col(        
+#                         dcc.Dropdown(
+#                         id='dd-chart-x',
+#                         options=[
+#                             {'label': 'Job', 'value': 'job'}#,
+#                             # {'label': 'Cylinders', 'value': 'Cylinders'},
+#                             # {'label': 'Displacement', 'value': 'Displacement'},
+#                             # {'label': 'Horsepower', 'value': 'Horsepower'}
+#                         ],
+#                         clearable=False,
+#                         value='job'
+#                         ), width=2),
                     dbc.Col(        
                         dcc.RadioItems(
                                         id='dd-chart-z',

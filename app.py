@@ -227,18 +227,18 @@ content = dbc.Container([
                             #         verticalAlign="middle")
                             ), width=4,  ###<---- VIC
                             ),
-#                     dbc.Col(        
-#                         dcc.Dropdown(
-#                         id='dd-chart-x',
-#                         options=[
-#                             {'label': 'Job', 'value': 'job'}#,
-#                             # {'label': 'Cylinders', 'value': 'Cylinders'},
-#                             # {'label': 'Displacement', 'value': 'Displacement'},
-#                             # {'label': 'Horsepower', 'value': 'Horsepower'}
-#                         ],
-#                         clearable=False,
-#                         value='job'
-#                         ), width=2),
+                    dbc.Col(        
+                        dcc.Dropdown(
+                        id='dd-chart-x',
+                        options=[
+                            {'label': 'Job', 'value': 'job'}#,
+                            # {'label': 'Cylinders', 'value': 'Cylinders'},
+                            # {'label': 'Displacement', 'value': 'Displacement'},
+                            # {'label': 'Horsepower', 'value': 'Horsepower'}
+                        ],
+                        clearable=False,
+                        value='job'
+                        ), width=2),
                     dbc.Col(        
                         dcc.RadioItems(
                                         id='dd-chart-z',

@@ -254,7 +254,7 @@ content = dbc.Container([
     ]
 )
 
-footer = dbc.Container([dbc.Row(dbc.Col(html.P('This Dash app was made collaboratively by the DSCI 532 group 208!'))),
+footer = dbc.Container([dbc.Row(dbc.Col(html.P('This Dash app was made collaboratively by the DSCI 532 group 208! \n Trying this one'))),
          ])
 
 app.layout = html.Div([jumbotron,

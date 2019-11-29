@@ -254,10 +254,10 @@ content = dbc.Container([
     ]
 )
 
-footer = dbc.Container([dbc.Row(dbc.Col(html.P('This Dash app was made collaboratively by the DSCI 532 group 208! /n Trying this one'))),
+footer = dbc.Container([dbc.Row(dbc.Col(html.P('This Dash app was made collaboratively by the DSCI 532 group 208! /n Trying this one'))),(dbc.Col(html.P('[Second footer](https://www.peanuts.com)')))
          ])
-footer = dbc.Container([dbc.Row(dbc.Col(html.P('[Second footer](https://www.peanuts.com)'))),
-         ])
+# footer = dbc.Container([dbc.Row(dbc.Col(html.P('[Second footer](https://www.peanuts.com)'))),
+#          ])
 
 app.layout = html.Div([jumbotron,
                        content,

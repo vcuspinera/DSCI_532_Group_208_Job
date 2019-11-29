@@ -216,8 +216,8 @@ content = dbc.Container([
                         dcc.Dropdown(
                             id='dd-chart-y',
                             options=[
-                                {'label': 'Stable jobs', 'value': 'std'},
-                                {'label': 'Popular jobs in 2000', 'value': 'together_y'}
+                                {'label': 'Stable jobs', 'value': 'std'}, ###<---- VIC
+                                {'label': 'Popular jobs in 2000', 'value': 'together_y'} ###<---- VIC
                                 # {'label': '2000', 'value': '2000'},
                                 # {'label': 'Horsepower', 'value': 'Horsepower'}
                             ],
@@ -225,7 +225,7 @@ content = dbc.Container([
                             value='std',
                             # style=dict(width='45%',
                             #         verticalAlign="middle")
-                            ), width=4,
+                            ), width=4,  ###<---- VIC
                             ),
 #                     dbc.Col(        
 #                         dcc.Dropdown(

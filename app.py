@@ -113,8 +113,8 @@ def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both')
             alt.X(x1, title='Job', axis=alt.Axis(labelAngle=30)),
             alt.Y(y1, title= 'Standard Diveation')
         ).properties(
-            width=500,
-            height=500,
+            width=400,
+            height=400,
             title = 'SD of Ten Most Stable Jobs from 1850 to 2000'
         )
 
@@ -125,8 +125,8 @@ def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both')
             color = 'job',
             opacity=alt.condition(brush, alt.value(0.75), alt.value(0.05))
         ).properties(
-            width=500,
-            height=500,
+            width=400,
+            height=400,
             title = 'Popularity of Ten Most Stable Jobs Over Time'
         )
 
@@ -157,8 +157,8 @@ def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both')
             alt.X(x1, title='Job', axis=alt.Axis(labelAngle=30)),
             alt.Y(y1, title= 'Percentage')
         ).properties(
-            width=500,
-            height=500,
+            width=400,
+            height=400,
             title = 'Ten Most Popular Jobs in Year 2000'
         )
 
@@ -169,12 +169,12 @@ def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both')
             color = 'job',
             opacity=alt.condition(brush, alt.value(0.75), alt.value(0.05))
         ).properties(
-            width=500,
-            height=500,
-            title = "Popularity Change Over Time of 2000's Ten Most Popular Jobs"
+            width=400,
+            height=400,
+            title = "Popularity Trend of 2000's Ten Most Popular Jobs"
         )
     if z == 'both':
-        return (bar & line)
+        return (bar | line)
     if z == 'bar':
         return bar
 
@@ -186,9 +186,18 @@ jumbotron = dbc.Jumbotron(
                 #     width='100px'),
                 html.H1("Job Tracker", className="display-3"),
                 html.P(
-                    "Find interesting features in job from 1850 to 2000 by selecting on charts! (Missing data was estimated by interpolation)",
+                    "Find the most stable jobs from 1850 to 2000 and most popular job in 2000 ",
                     className="lead",
                 ),
+                html.P(
+                    "Select the bar you are interested in to visualize that job's trend!",
+                    className="lead",
+                ),
+                html.P(
+                    "Note: Missing data was estimated by interpolation.",
+                    className="lead",
+                )
+                
             ],
             fluid=True,
         )
@@ -201,23 +210,13 @@ logo = dbc.Row(dbc.Col(html.Img(src='https://upload.wikimedia.org/wikipedia/comm
 
 content = dbc.Container([
     dbc.Row(
-                [dbc.Col(
-                    html.Iframe(
-                        sandbox='allow-scripts',
-                        id='plot',
-                        height='800',
-                        width='1200',
-                        style={'border-width': '0'},
-                        ################ The magic happens here
-                        srcDoc=make_plot().to_html()
-                        ################ The magic happens here
-                        ),width=8),
+                [   html.Label('Question you are interested :'),
                     dbc.Col(
                         dcc.Dropdown(
                             id='dd-chart-y',
                             options=[
-                                {'label': 'Standard Deviation', 'value': 'std'},
-                                {'label': 'Percentage in 2000', 'value': 'together_y'}
+                                {'label': 'Top 10 Stable Jobs', 'value': 'std'},
+                                {'label': 'Top 10 Popular Jobs in 2000', 'value': 'together_y'}
                                 # {'label': '2000', 'value': '2000'},
                                 # {'label': 'Horsepower', 'value': 'Horsepower'}
                             ],
@@ -225,21 +224,23 @@ content = dbc.Container([
                             value='std',
                             # style=dict(width='45%',
                             #         verticalAlign="middle")
-                            ), width=2,
                             ),
-                    dbc.Col(        
+                            ),
+                    html.Label('Dataset :'), 
+                    dbc.Col(       
                         dcc.Dropdown(
                         id='dd-chart-x',
                         options=[
-                            {'label': 'Job', 'value': 'job'}#,
+                            {'label': 'Job (From Vega)', 'value': 'job'}#,
                             # {'label': 'Cylinders', 'value': 'Cylinders'},
                             # {'label': 'Displacement', 'value': 'Displacement'},
                             # {'label': 'Horsepower', 'value': 'Horsepower'}
                         ],
                         clearable=False,
                         value='job'
-                        ), width=2),
-                    dbc.Col(        
+                        )),
+                    html.Label('Chart Type :'),  
+                    dbc.Col(      
                         dcc.RadioItems(
                                         id='dd-chart-z',
                                         options=[
@@ -247,14 +248,30 @@ content = dbc.Container([
                                         {'label': 'Both', 'value': 'both'}
                                         ],
                                           value='both'
-                                        ), width=2
-                    )
+                                        )
+                    ),
+                    dbc.Col(
+                    html.Iframe(
+                        sandbox='allow-scripts',
+                        id='plot',
+                        height='600',
+                        width='1300',
+                        style={'border-width': '0'},
+                        ################ The magic happens here
+                        srcDoc=make_plot().to_html()
+                        ################ The magic happens here
+                        )),
                 ]
             )
     ]
 )
 
 footer = dbc.Container([dbc.Row(dbc.Col(html.P('This Dash app was made collaboratively by the DSCI 532 group 208!'))),
+    dcc.Markdown(
+        '''
+        [Data Source](https://github.com/vega/vega-datasets/blob/master/data/jobs.json)
+        '''
+    )
          ])
 
 app.layout = html.Div([jumbotron,

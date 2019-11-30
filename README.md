@@ -9,23 +9,21 @@ Victor C.: [vcuspinera](https://github.com/vcuspinera)
 
 ## DESCRIPTION OF THE APP & SKETCH
 
-View our app [here](https://dsci-532-group-208-milestone2.herokuapp.com)
-
 The central purpose of this app is to be a quick guiding tool to any person who wants to know which are the professions that are still standing relevant, which are the ones that have gained in popularity and, which are the ones that have fallen by the wayside.
 
 ### Our App
-- The app consists of two major portions. The menu panel on the left and the plots on the right side of the screen. The Menu panel consists of a drop-down menu and a radio button and have a hamburger menu which allows the user to collapse the menu panel and get an enlarged view of the plots.  
-  
-- The radio button will allow the user to make a selection of what data category he/she wants to visualize, and the radio button shall enable which kind of plots are to be visualized.  
-  
-- The plots panel on the right side of the screen consists of 2 plots stacked one above the other. The top graph is a vertical bar plot while the lower plot is a multiple line chart. The plots would be interactive, and making a selection on the top graph will highlight a corresponding line on the plot. Both plots will have the ability to be panned and zoomed. There shall be an effective use of color as deemed necessary during the implementation.  
-  
 
+- The app consists of 2 sections. The menu section at the top allows the user to choose the data he or she would like to visualize. The section below is the plot section and this is where the data is visualized. 
+
+- The menu section comprises of 2 dropdown menus. The first dropdown menu allows the user to choose between the "top 10 most stable jobs over time" and "the most popular jobs in the year 2000". The second dropdown menu is to select the dataset to visualize.( this is for future development).  Besides the dropdown menu, there is a radio button that allows the user to choose between Bar plots and line graphs. 
+
+- The plots section primarily consists of 2 plots faceted side by side. The plot on the left is a Vertical bar plot and the plot on the right is a line graph. 
+
+- The user can select the bars in the bar plot and the corresponding line on the line plot will be highlighted to show the trend of the job over a period of time.
+ 
+  
+  
 ### The App's Sketch
+  
+![first_sketch](img/sketch_v2.jpg "Jobs App Sketch")
 
-This is the general view of the app:
-![first_sketch](img/our_app_1.png "Jobs App Sketch")
-  
-  
-This is how it works when a selection is made by the user:
-![second_sketch](img/our_app_2.png "Jobs App Sketch")

@@ -30,9 +30,9 @@ The link to our app on Heroku. [here](https://dsci-532-group-208-milestone2.hero
 
 - This is the general view of our app.
 
-![first_sketch](img/our_app_1 "General app view")
+![first_sketch](img/our_app_1.png "General app view")
 
 
 - This a the view when a selection is made by the user.
-![second_sketch](img/our_app_2 "view when a selection is made")
+![second_sketch](img/our_app_2.png "view when a selection is made")
 

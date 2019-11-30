@@ -9,6 +9,8 @@ Victor C.: [vcuspinera](https://github.com/vcuspinera)
 
 ## DESCRIPTION OF THE APP & SKETCH
 
+View our app [here](https://dsci-532-group-208-milestone2.herokuapp.com)
+
 The central purpose of this app is to be a quick guiding tool to any person who wants to know which are the professions that are still standing relevant, which are the ones that have gained in popularity and, which are the ones that have fallen by the wayside.
 
 ### Our App
@@ -18,8 +20,12 @@ The central purpose of this app is to be a quick guiding tool to any person who 
   
 - The plots panel on the right side of the screen consists of 2 plots stacked one above the other. The top graph is a vertical bar plot while the lower plot is a multiple line chart. The plots would be interactive, and making a selection on the top graph will highlight a corresponding line on the plot. Both plots will have the ability to be panned and zoomed. There shall be an effective use of color as deemed necessary during the implementation.  
   
-  
-### The App's Sketch
-  
-![first_sketch](img/sketch_v1.jpg "Jobs App Sketch")
 
+### The App's Sketch
+
+This is the general view of the app:
+![first_sketch](img/our_app_1.png "Jobs App Sketch")
+  
+  
+This is how it works when a selection is made by the user:
+![second_sketch](img/our_app_2.png "Jobs App Sketch")

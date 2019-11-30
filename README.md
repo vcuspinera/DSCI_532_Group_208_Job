@@ -9,9 +9,12 @@ Victor C.: [vcuspinera](https://github.com/vcuspinera)
 
 ## DESCRIPTION OF THE APP & SKETCH
 
+
 The central purpose of this app is to be a quick guiding tool to any person who wants to know which are the professions that are still standing relevant, which are the ones that have gained in popularity and, which are the ones that have fallen by the wayside.
 
 ### Our App
+
+The link to our app on Heroku. [here](https://dsci-532-group-208-milestone2.herokuapp.com)
 
 - The app consists of 2 sections. The menu section at the top allows the user to choose the data he or she would like to visualize. The section below is the plot section and this is where the data is visualized. 
 
@@ -24,6 +27,12 @@ The central purpose of this app is to be a quick guiding tool to any person who 
   
   
 ### The App's Sketch
-  
-![first_sketch](img/sketch_v2.jpg "Jobs App Sketch")
+
+- This is the general view of our app.
+
+![first_sketch](img/our_app_1.png "General app view")
+
+
+- This a the view when a selection is made by the user.
+![second_sketch](img/our_app_2.png "view when a selection is made")
 

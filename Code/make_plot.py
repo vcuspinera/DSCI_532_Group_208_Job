@@ -2,7 +2,7 @@ import numpy as np
 import altair as alt
 import vega_datasets
 import pandas as pd
-from data_wrangling import *
+from Code.data_wrangling import *
 
 def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both'):
     # Don't forget to include imports

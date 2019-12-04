@@ -33,3 +33,5 @@ first3 = first2[first2['year'].isin(['2000'])]
 first3 = first3.sort_values(by=['perc'], ascending=[False]).iloc[:10]
 
 all2 = pd.merge(first2, first3, how="inner", on="job")
+all2.to_csv('2000_pop_job.csv')
+all1.to_csv("most_stable_job.csv")

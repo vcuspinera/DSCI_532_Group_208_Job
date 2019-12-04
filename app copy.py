@@ -6,7 +6,7 @@ import altair as alt
 import vega_datasets
 import pandas as pd
 import altair as alt
-from make_plot import *
+from Code.make_plot import *
 
 ### NEW IMPORT
 # See Docs here: https://dash-bootstrap-components.opensource.faculty.ai

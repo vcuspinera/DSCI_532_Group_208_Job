@@ -120,7 +120,14 @@ def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both')
             alt.Y(y2, title = 'Percentage in Total Work Force', axis=alt.Axis(format='%')),
             color = 'job',
             opacity=alt.condition(brush, alt.value(0.75), alt.value(0.05))
-        ).properties(
+        )
+        line_inter = alt.layer(
+        line, # base line chart
+        
+        # add circle marks for selected time points, hide unselected points
+        line.mark_circle().encode(
+            opacity=alt.condition(brush, alt.value(1), alt.value(0))
+        ).add_selection(brush)).properties(
             width=400,
             height=400,
             title = 'Popularity of Ten Most Stable Jobs Over Time'
@@ -153,12 +160,22 @@ def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both')
             alt.Y('together_x', title = 'Percentage in Total Work Force',axis=alt.Axis(format='%')),
             color = 'job',
             opacity=alt.condition(brush, alt.value(0.75), alt.value(0.05))
-        ).properties(
+        )
+
+        line_inter = alt.layer(
+        line, # base line chart
+        
+        # add circle marks for selected time points, hide unselected points
+        line.mark_circle().encode(
+            opacity=alt.condition(brush, alt.value(1), alt.value(0))
+        ).add_selection(brush)).properties(
             width=400,
             height=400,
             title = "Popularity Trend of 2000's Ten Most Popular Jobs"
         )
+        
     if z == 'both':
-        return (bar | line)
+        return  (bar | line_inter)
+        
     if z == 'bar':
         return bar

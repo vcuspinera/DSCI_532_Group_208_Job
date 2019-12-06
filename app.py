@@ -6,6 +6,7 @@ import altair as alt
 import vega_datasets
 import pandas as pd
 import altair as alt
+from Code.make_plot import *
 
 ### NEW IMPORT
 # See Docs here: https://dash-bootstrap-components.opensource.faculty.ai
@@ -17,180 +18,17 @@ app.config['suppress_callback_exceptions'] = True
 server = app.server
 app.title = 'Dash app with pure Altair HTML'
 
-def make_plot(x1 = 'job',y1 = 'std',x2 = 'year_x:O',y2 = 'together', z = 'both'):
-    # Don't forget to include imports
-    def mds_special():
-        font = "Arial"
-        axisColor = "#000000"
-        gridColor = "#DEDDDD"
-        return {
-            "config": {
-                "title": {
-                    "fontSize": 24,
-                    "font": font,
-                    "anchor": "start", # equivalent of left-aligned.
-                    "fontColor": "#000000"
-                },
-                'view': {
-                    "height": 300, 
-                    "width": 400
-                },
-                "axisX": {
-                    "domain": True,
-                    #"domainColor": axisColor,
-                    "gridColor": gridColor,
-                    "domainWidth": 1,
-                    "grid": False,
-                    "labelFont": font,
-                    "labelFontSize": 12,
-                    "labelAngle": 0, 
-                    "tickColor": axisColor,
-                    "tickSize": 5, # default, including it just to show you can change it
-                    "titleFont": font,
-                    "titleFontSize": 16,
-                    "titlePadding": 10, # guessing, not specified in styleguide
-                    "title": "X Axis Title (units)", 
-                },
-                "axisY": {
-                    "domain": False,
-                    "grid": True,
-                    "gridColor": gridColor,
-                    "gridWidth": 1,
-                    "labelFont": font,
-                    "labelFontSize": 14,
-                    "labelAngle": 0, 
-                    #"ticks": False, # even if you don't have a "domain" you need to turn these off.
-                    "titleFont": font,
-                    "titleFontSize": 16,
-                    "titlePadding": 10, # guessing, not specified in styleguide
-                    "title": "Y Axis Title (units)", 
-                    # titles are by default vertical left of axis so we need to hack this 
-                    #"titleAngle": 0, # horizontal
-                    #"titleY": -10, # move it up
-                    #"titleX": 18, # move it to the right so it aligns with the labels 
-                },
-            }
-                }
-
-    # register the custom theme under a chosen name
-    alt.themes.register('mds_special', mds_special)
-
-    # enable the newly registered theme
-    alt.themes.enable('mds_special')
-    #alt.themes.enable('none') # to return to default
-
-
-    # Create a plot from the cars dataset
-
-    data = pd.read_json('https://raw.githubusercontent.com/vega/vega-datasets/master/data/jobs.json')
-    data = pd.DataFrame(data)
-    import numpy as np
-   
-    if y1 =='std':
-        data['job'] = data['job'].str.replace('Professor.*', 'Professor', regex=True)
-        mini_sd = data.groupby(['job']).std().sort_values(by=['perc'], 
-                                                    ascending=[True]).reset_index().iloc[:10]
-        
-        mini_sd = mini_sd.rename(columns = {'perc':'std'})
-        all1 = pd.merge(data, mini_sd, how="inner", on="job")
-        first = all1.query('sex == "men"')
-        second = all1.query('sex == "women"')
-        first = first.reset_index()
-        first['together'] = pd.Series(np.asarray(first['perc']) + np.asarray(second['perc']))
-        first = first.replace({'together' : 0}, value = np.nan)
-        first = first.interpolate()
-        first = first.sort_values(by=['std'], 
-                                ascending=[True])
-        first = first.reset_index()
-        brush = alt.selection_interval(
-        encodings=['x'] # limit selection to x-axis (year) values
-        )
-
-        # dynamic query histogram
-        bar = alt.Chart(first).mark_bar().add_selection(
-            brush
-        ).encode(
-            alt.X(x1, title='Job', axis=alt.Axis(labelAngle=30)),
-            alt.Y(y1, title= 'Standard Diveation')
-        ).properties(
-            width=400,
-            height=400,
-            title = 'SD of Ten Most Stable Jobs from 1850 to 2000'
-        )
-
-        # scatter plot, modify opacity based on selection
-        line = alt.Chart(first).mark_line().encode(
-            alt.X(x2, title = 'Year', axis=alt.Axis(labelAngle=0)),
-            alt.Y(y2, title = 'Percentage in Total Work Force'),
-            color = 'job',
-            opacity=alt.condition(brush, alt.value(0.75), alt.value(0.05))
-        ).properties(
-            width=400,
-            height=400,
-            title = 'Popularity of Ten Most Stable Jobs Over Time'
-        )
-
-    if y1 == 'together_y':
-        first2 = data.query('sex == "men"')
-        second2 = data.query('sex == "women"')
-        first2 = first2.reset_index()
-        first2['together'] = pd.Series(np.asarray(first2['perc']) + np.asarray(second2['perc']))
-        first2 = first2.replace({'together' : 0}, value = np.nan)
-        first2 = first2.interpolate()
-        first2 = first2.sort_values(by=['perc'], 
-                                ascending=[True])
-        first2 = first2.reset_index()
-
-        first2['job'] = first2['job'].str.replace('Professor.*', 'Professor', regex=True)
-        first3 = first2[first2['year'].isin(['2000'])]
-        first3 = first3.sort_values(by=['perc'], ascending=[False]).iloc[:10]
-
-        all2 = pd.merge(first2, first3, how="inner", on="job")
-        brush = alt.selection_interval(
-        encodings=['x'] # limit selection to x-axis (year) values
-        )
-
-        # dynamic query histogram
-        bar = alt.Chart(all2).mark_bar().add_selection(
-            brush
-        ).encode(
-            alt.X(x1, title='Job', axis=alt.Axis(labelAngle=30)),
-            alt.Y(y1, title= 'Percentage')
-        ).properties(
-            width=400,
-            height=400,
-            title = 'Ten Most Popular Jobs in Year 2000'
-        )
-
-        # scatter plot, modify opacity based on selection
-        line = alt.Chart(all2).mark_line().encode(
-            alt.X('year_x:O', title = 'Year', axis=alt.Axis(labelAngle=0)),
-            alt.Y('together_x', title = 'Percentage in Total Work Force'),
-            color = 'job',
-            opacity=alt.condition(brush, alt.value(0.75), alt.value(0.05))
-        ).properties(
-            width=400,
-            height=400,
-            title = "Popularity Trend of 2000's Ten Most Popular Jobs"
-        )
-    if z == 'both':
-        return (bar | line)
-    if z == 'bar':
-        return bar
 
 jumbotron = dbc.Jumbotron(
     [
         dbc.Container(
-            [
-                #html.Img(src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Unico_Anello.png/1920px-Unico_Anello.png', 
-                #     width='100px'),
-                html.H1("Job Tracker", className="display-3"),
+            [   html.H1("Job Tracker", className="display-2"),
                 html.P(
                     "Find the most stable jobs from 1850 to 2000 and most popular job in 2000 ",
                     className="lead",
                 ),
                 html.P(
-                    "Select the bar you are interested in to visualize that job's trend!",
+                    "Click the bar you are interested in to visualize that job's trend!(Multiple selection: shift + click)",
                     className="lead",
                 ),
                 html.P(
@@ -231,8 +69,8 @@ content = dbc.Container([
                         dcc.Dropdown(
                         id='dd-chart-x',
                         options=[
-                            {'label': 'Job (From Vega)', 'value': 'job'}#,
-                            # {'label': 'Cylinders', 'value': 'Cylinders'},
+                            {'label': 'Job (From Vega)', 'value': 'job'},
+                            {'label': 'More dataset coming soon', 'value': 'job'}#,
                             # {'label': 'Displacement', 'value': 'Displacement'},
                             # {'label': 'Horsepower', 'value': 'Horsepower'}
                         ],
@@ -245,9 +83,9 @@ content = dbc.Container([
                                         id='dd-chart-z',
                                         options=[
                                         {'label': 'Bar Only', 'value': 'bar'},
-                                        {'label': 'Both', 'value': 'both'}
+                                        {'label': 'Bar + Line', 'value': 'both'}
                                         ],
-                                          value='both'
+                                          value='bar'
                                         )
                     ),
                     dbc.Col(

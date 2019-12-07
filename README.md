@@ -14,7 +14,8 @@ The central purpose of this app is to be a quick guiding tool to any person who 
 
 ### Our App
 
-The link to our app on Heroku. [here](https://dsci-532-group-208-milestone3.herokuapp.com)
+The user would have access to the updated app in [this new link on Heroku.](https://dsci-532-group-208-milestone3.herokuapp.com)
+Additionally, here it is the link to the [previous version of the app on Heroku.](https://dsci-532-group-208-milestone2.herokuapp.com)
 
 - The app consists of 2 sections. The menu section at the top allows the user to choose the data he or she would like to visualize. The section below is the plot section and this is where the data is visualized. 
 

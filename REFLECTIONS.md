@@ -10,3 +10,15 @@ The plot itself could have been a bit more refined by adding a hamburger menu li
 
 ## Feedback:
 Specific feedback from the TA’s to interpolate the missing values and to cite the data source has been incorporated into the app 
+
+
+## Changes made according to feedback received.
+
+A few major and some minor changes have been incorporated into the app as a response to the feedback received. 
+The interactivity have been made easier. The user can now click to select the bar indicating a job role and get an insight into the line plot of the selected graph. The user can select multiple bars by using shift + click.
+
+The bars are now reordered. The plot is in a descending manner while the stability plot is ordered in a descending manner. The jobs with the minimum Standard deviation which indicate maximum stability are on the left. 
+
+
+
+

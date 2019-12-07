@@ -22,5 +22,5 @@ Below are 2 examples of the common usage scenarios that we envisage for our dash
 ### <span style="color:seagreen">Which are the most stable jobs?</span>
 We intend to focus on the top 10 most stable professions and show how demands for these professions have remained constant over a long period of time.
   
-### <span style="color:seagreen">Which are the top 10 professions that have seen a maximum increase in demand over the last 170 years?</span>
+### <span style="color:seagreen">Which are the top 10 popular professions in 2000?</span>
 Using our dashboard we intend to provide the user with convincing answers to these research questions through data and its visualization.

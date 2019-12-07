@@ -36,7 +36,7 @@ Slider for the bar graph.
 ## Summary of Changes
 The changes that were implemented were almost all from the feedback received from the TA and from the peers. The timeframe available was only a couple of days and only those changes that were of user value and could be implemented in a short time were selected. The bar plot and the line plots that form the heart of the application were selected. These were the selection of the bar plot, its color scheme, and the reordering.
 
-## summary of feedback
+## Summary of feedback
 Most feedback was received about the Bar plot and its layout. Adding a slider and making the selection of the bar plots more intuitive. Most users did not approve of the sliding window to select the bar plot area. There was no color in the bar plot which matched the line plots. Suggestions were made to include more job roles in the analysis and its visualization.
 
 ## Teams reflections

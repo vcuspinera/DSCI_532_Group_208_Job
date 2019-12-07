@@ -13,46 +13,31 @@ Specific feedback from the TA’s to interpolate the missing values and to cite 
 
 
 ## Changes made according to feedback received.
+A few major and some minor changes have been incorporated into the app as a response to the feedback received. The interactivity has been made easier.  
 
-A few major and some minor changes have been incorporated into the app as a response to the feedback received. 
-The interactivity have been made easier.
-
-1. The user can now click to select the bar indicating a job role and get an insight into the line plot of the selected graph. The user can select multiple bars by using shift + click. The bar plot is now coloured with the same color scheme as the one that is used by the line plot on the right.
+1. The user can now click to select the bar indicating a job role and get an insight into the line plot of the selected graph. The user can select multiple bars by using shift + click. The bar plot is now colored with the same color scheme like the one that is used by the line plot on the right.  
 https://github.com/UBC-MDS/DSCI_532_Group_208_Job/issues/25
 
-2. The bars are now reordered. The plot is in a descending manner while the stability plot is ordered in a descending manner. The jobs with the minimum Standard deviation which indicate maximum stability are on the left.
-https://github.com/UBC-MDS/DSCI_532_Group_208_Job/issues/14
+2. The bars are now reordered. The plot is in a descending manner while the stability plot is ordered in a descending manner. The jobs with the minimum Standard deviation which indicate maximum stability are on the left. https://github.com/UBC-MDS/DSCI_532_Group_208_Job/issues/14
 
-3. The line plots now have a tooltip indicating the job details. The (%) symbol has been added to the Y axis. 
-https://github.com/UBC-MDS/DSCI_532_Group_208_Job/issues/23
+3. The line plots now have a tooltip indicating the job details. The (%) symbol has been added to the Y-axis. https://github.com/UBC-MDS/DSCI_532_Group_208_Job/issues/23
 
 4. The text in the header area has been edited to inform the user of the controls for selecting the data to be visualized.
 
+
 All the changes above have been after prioritizing the peer feedback and the TA feedback received. The time constraint was the primary reason for the choice of changes to be implemented.
 
+## Wishlist features/bugs
+Expanded the bar plot to occupy the whole screen when the user selects only the bar plot from the radio button.
+Include more jobs in the dataset for analysis and visualization.
+Could add another graph like a heatmap or a scatter plot to compare stability and popularity.
+Slider for the bar graph.
 
-## Wishlist features / bugs
-
-1. Expanded the bar plot to occupy the whole screen when the user selects only the bar plot from the radio button. 
-2. Include more jobs in the dataset for analysis and visualization.  
-3. Could add another graph like a heatmap or a scatter plot to compare stability and popularity. 
-4. Slider for the bar graph.
-
-
-
-## Summary of Changes    
-The changes that were implemented were almost all from the feedback received from the TA and from the peers.
-The timeframe available was only a couple of days and only those changes that were of user value and could be implemented in a short time were selected. The bar plot and the line plots that form the heart of the application were selected. These were the selection of the bar plot, its color scheme and the reordering. 
+## Summary of Changes
+The changes that were implemented were almost all from the feedback received from the TA and from the peers. The timeframe available was only a couple of days and only those changes that were of user value and could be implemented in a short time were selected. The bar plot and the line plots that form the heart of the application were selected. These were the selection of the bar plot, its color scheme, and the reordering.
 
 ## summary of feedback
-
 Most feedback was received about the Bar plot and its layout. Adding a slider and making the selection of the bar plots more intuitive. Most users did not approve of the sliding window to select the bar plot area. There was no color in the bar plot which matched the line plots. Suggestions were made to include more job roles in the analysis and its visualization.
 
-
-## Teams reflections 
-
-Most users liked the simplicity of the app and the direct way in which the app addresses the reasearch question.
-some of the key changes made to the bar plot have made a large impact way the app appears and functions. Some users struggled to understand the role of standard deviation in the app. We had not expected this and it was surprising  to see it happen. The feedback process was an important step as it made us aware of certain aspects of our app that we as makers of the app failed to see. Suggestions made to change the app which did not address the research question were the least useful. Suggestions about the bar plots and the ones related to the interactivity of the user with the app were the most useful.
-Given the time frame available some changes suggested were too difficult to implement like the ones to expand the bar plot to occupy the whole screen by using the radio button. However, the most impactful changes to the bar plot have now been implemented and the app is now more user friendly and intuitive. 
-
-
+## Teams reflections
+Most users liked the simplicity of the app and the direct way in which the app addresses the research question. some of the key changes made to the bar plot have made a large impact way the app appears and functions. Some users struggled to understand the role of standard deviation in the app. We had not expected this and it was surprising to see it happen. The feedback process was an important step as it made us aware of certain aspects of our app that we as makers of the app failed to see. Suggestions made to change the app which did not address the research question were the least useful. Suggestions about the bar plots and the ones related to the interactivity of the user with the app were the most useful. Given the time frame available some changes suggested were too difficult to implement like the ones to expand the bar plot to occupy the whole screen by using the radio button. However, the most impactful changes to the bar plot have now been implemented and the app is now more user-friendly and intuitive.

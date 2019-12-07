@@ -28,21 +28,21 @@ The link to our app on Heroku. [here](https://dsci-532-group-208-milestone3.hero
   
 ### The App's Sketch
 
-- This is the general view of our app when you get into the webpage.
+- This is the general view of our app when the user arrives into the webpage.
 
 ![first_view](img/final_plot_1.png "General app view")
 
 
-- This is the view when you select the radio button for the bar and line plots.
+- This is the view when the user selects the radio button for the bar and line plots.
 
 ![second_view](img/final_plot_2.png "Bar and line plots")
 
 
-- This is the view when you select other question of interest with the dropdown menu.
+- This is the view when the user selects other question of interest with the dropdown menu.
 
 ![third_view](img/final_plot_3.png "Change the question of interest")
 
 
 
-- This a the view when the user select a specific job in the bar plot.
+- This a the view when the user selects a specific job in the bar plot.
 ![fourth_view](img/final_plot_4.png "Select a sepcific job in the bar pot")

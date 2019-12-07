@@ -10,10 +10,11 @@ The 'job' data set is from Vega Datasets, and 'job' data set contains informatio
 
 Below are 2 examples of the common usage scenarios that we envisage for our dashboard.  
   
-- John is a high school graduate who is standing at a juncture in life and wants to make critical career decisions that can have a significant impact on his future. He is interested in knowing what are the occupations that have been consistently in demand and which are the ones that have been gaining in popularity.  This information will help him decide which career to choose.  
+- John is a high school graduate who is standing at a juncture in life and needs assistance so that he can make the correct career decisions that can have a significant impact on his future. He is interested in knowing what are the occupations that have been consistently in demand and which are the ones that have been gaining in popularity.  This information will help him gain an insight into how stable some skills have been over a period of time and which are the skills that are gaining popularity as time progressed.
   
 - Jane is a policymaker with the Canadian ministry of education, and she has been mandated with the task of deciding on which kind of vocational courses should be made available to the public in the new technical school that the government is opening.  
-  
+
+
   
 ### <span style="color:seagreen">Which are the most stable jobs?</span>
 We intend to focus on the top 10 most stable professions and show how demands for these professions have remained constant over a long period of time.
